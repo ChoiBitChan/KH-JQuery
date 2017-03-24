@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>sample10 </title>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<style type="text/css">
+p{
+	width:800px;
+	height:267px;
+	margin:0;
+}
+div{
+	width:400px;
+	height:267px;
+	overflow:hidden;	<!-- 벗어나는 부분은 보이지 않겠다 -->
+}
+		</style>
+		<script>
+$(function(){
+	$("#flower").mouseover(function(){
+		$("p:not(:animated)").animate({
+			marginLeft : "-400px" 
+		},"fast","swing");
+	});
+	$("#building").mouseout(function(){
+		$("p:not(:animated)").animate({
+			marginLeft : "0" 
+		},"fast","swing");
+	});
+});
+		</script>
+	</head>
+	<body>
+		<div><p><img src="flower.jpg" alt="flower" id="flower" /><img src="building.jpg" alt="building" id="building" /></p></div>
+	</body>
+</html>
